@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5 mb-4">
+            <mdb-card>
+                <mdb-card-header class="bg-blue white-text text-center py-4">
+                <h5>
+                    <strong>Sign up</strong>
+                </h5>
+                </mdb-card-header>
+                <mdb-card-body class="px-lg-5 pt-0">
+                    <form class="text-center text-left" style="color: #757575;" (submit)="signUp()">
+                
+                        <div class="form-row">
+                            <div class="col">
+                                <!-- First name -->
+                                <div class="md-form text-left">
+                                    <input type="text" name="fname" [(ngModel)]="fname" id="materialRegisterFormFirstName" class="form-control" required mdbInput>
+                                    <label for="materialRegisterFormFirstName">First name</label>
+                                    <span *ngIf="errors.fname !== ''" class="text-danger font-small">{{errors.fname}}</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- Last name -->
+                                <div class="md-form text-left">
+                                    <input type="text" name="lname" [(ngModel)]="lname" id="materialRegisterFormLastName" required class="form-control" mdbInput>
+                                    <label for="materialRegisterFormLastName">Last name</label>
+                                    <span *ngIf="errors.lname !== ''" class="text-danger font-small">{{errors.lname}}</span>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- E-mail -->
+                        <div class="md-form mt-0 text-left">
+                            <input type="email" name="email" [(ngModel)]="email" id="materialRegisterFormEmail" class="form-control" mdbInput>
+                            <label for="materialRegisterFormEmail" required>E-mail</label>
+                            <span *ngIf="errors.email !== ''" class="text-danger font-small">{{errors.email}}</span>
+                        </div>
+                
+                        <!-- Password -->
+                        <div class="md-form text-left">
+                        <input type="password" required name="password" [(ngModel)]="password" id="materialRegisterFormPassword" pattern="$[a-zA-Z0-9]{8,10}$" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
+                            mdbInput>
+                        <label for="materialRegisterFormPassword">Password</label>
+                        <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4" [class.d-none]="errors.password !== ''">
+                            At least 8 characters and 1 digit
+                        </small>
+                        <span *ngIf="errors.password !== ''" class="text-danger font-small">{{errors.password}}</span>
+                        </div>
+                
+                        <!-- Phone number -->
+                        <div class="md-form text-left">
+                        <input type="text" name="contactNo" [(ngModel)]="contactNo" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock"
+                            mdbInput>
+                        <label for="materialRegisterFormPhone">Phone number</label>
+                        <small id="materialRegisterFormPhoneHelpBlock" [class.d-none]="errors.contactNo !== ''" class="form-text text-muted mb-4">
+                            Optional - for two-step authentication
+                        </small>
+                        <span *ngIf="errors.contactNo !== ''" class="text-danger font-small">{{errors.contactNo}}</span>
+                        </div>
+                        
+                        <!-- Terms of service -->
+                        <p>By clicking
+                            <em>Sign up</em> you agree to our
+                            <a class="text-primary">terms of service</a>. 
+                        </p>
+
+                        <!-- Sign up button -->
+                        <button mdbBtn color="info" outline="true" rounded="true" block="true" class="mt-4 waves-effect z-depth-0" mdbWavesEffect
+                        type="submit">Sign up</button>
+                        <span *ngIf="signUpError" class="text-danger font-small">
+                            User Already Exists <a class="text-primary" (click)='goToLogin()'>Login</a> to continue
+                        </span>
+                
+                        <!-- Social register -->
+                        <!-- <p>or sign up with:</p>
+                
+                        <a type="button" class="light-blue-text mx-2">
+                        <mdb-icon fab icon="facebook"></mdb-icon>
+                        </a>
+                        <a type="button" class="light-blue-text mx-2">
+                        <mdb-icon fab icon="twitter"></mdb-icon>
+                        </a>
+                        <a type="button" class="light-blue-text mx-2">
+                        <mdb-icon fab icon="linkedin"></mdb-icon>
+                        </a>
+                        <a type="button" class="light-blue-text mx-2">
+                        <mdb-icon fab icon="heart"></mdb-icon>
+                        </a> -->
+                
+                        <hr>
+                        <p>Already on EI ? 
+                            <a class="text-primary" (click)='goToLogin()'>Sign in</a>. 
+                        </p>
+                        
+                
+                    </form>            
+                </mdb-card-body>
+            </mdb-card>
+        </div>
+    </div>
+</div>

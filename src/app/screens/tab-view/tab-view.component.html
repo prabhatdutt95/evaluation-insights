@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark px-4 p-0">
+    <ul class="navbar-nav w-100 justify-content-around">
+    <div *ngFor="let tab of avaiableTabs">
+        <li class="nav-item p-1" [class.active]="activeTab == tab.name" [class.border-bottom]="activeTab == tab.name" *ngIf="!tab.dropDownItems else navDropdown">
+            <a class="nav-link" [routerLink]="tab.routeTo" (click)="changeActiveTab(tab.name);">{{tab.name}}</a>
+        </li>
+        <ng-template #navDropdown>
+            <li class="nav-item dropdown p-1">
+                <a class="nav-link dropdown-toggle" [routerLink]="tab.routeTo" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{tab.name}}
+                </a>
+                <div class="dropdown-menu bg-blue" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" *ngFor="let item of tab.dropDownItems" [routerLink]="item.routeTo">
+                        {{item.name}}
+                    </a>
+                </div>
+                </li>
+        </ng-template>
+    </div>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>

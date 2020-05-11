@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fname": "Prabhat",
+      "lname": "Dutt",
+      "email": "pdutt95@gmail.com",
+      "contactNumber": 7766554433,
+      "password": "infy1234"
+    },
+    {
+      "fname": "Prabhat",
+      "lname": "Dutt",
+      "email": "putt95@gmail.com",
+      "contactNumber": 7766554433,
+      "password": "infy1234",
+      "id": 2
+    },
+    {
+      "fname": "Nicky",
+      "lname": "Prusty",
+      "email": "nprusty@gmail.com",
+      "contactNumber": "8908908908",
+      "password": "cvrce9694",
+      "id": 3
+    }
+  ]
+}

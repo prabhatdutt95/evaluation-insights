@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="col-md-6 offset-md-3 mt-5 mb-4">
+    <mdb-card>
+        <mdb-card-header class="bg-blue white-text text-center py-4">
+        <h5>
+            <strong>Sign in</strong>
+        </h5>
+        </mdb-card-header>
+        <mdb-card-body class="px-lg-5 pt-0">
+            <form class="text-center" style="color: #757575;" (submit)="checkUser()">
+        
+                <!-- Email -->
+                <div class="md-form text-left">
+                    <input type="email" id="materialLoginFormEmail" [(ngModel)]="email" class="form-control" name="email" mdbInput>
+                    <label for="materialLoginFormEmail">E-mail</label>
+                </div>
+        
+                <!-- Password -->
+                <div class="md-form text-left">
+                    <input type="password" id="materialLoginFormPassword" [(ngModel)]="password" class="form-control" name="password" mdbInput>
+                    <label for="materialLoginFormPassword">Password</label>
+                </div>
+                
+                <div class="d-flex justify-content-around">
+                <div>
+                    <!-- Remember me -->
+                    <mdb-checkbox [default]="true" [(ngModel)]="rememberMe" name="rememberMe">Remember me</mdb-checkbox>
+                </div>
+                <div>
+                    <!-- Forgot password -->
+                    <a >Forgot password?</a>
+                </div>
+                </div>
+                
+                <!-- Sign in button -->
+                <button mdbBtn color="info" outline="true" rounded="true" block="true" class="mt-4 mb-1 waves-effect z-depth-0" mdbWavesEffect
+                type="submit">Sign in</button>
+                <span *ngIf="loginError !== ''" class="text-danger font-small">{{loginError}}</span>
+
+        
+                <!-- Register -->
+                <p>Not a member?
+                <a class="text-primary" (click)="goToSignUp()">Register</a>
+                </p>
+        
+                <!-- Social login -->
+                <!-- <p>or sign in with:</p>
+                <a type="button" mdbBtn floating="true" color="fb" size="sm">
+                <mdb-icon fab icon="facebook"></mdb-icon>
+                </a>
+                <a type="button" mdbBtn floating="true" color="tw" size="sm">
+                <mdb-icon fab icon="twitter"></mdb-icon>
+                </a>
+                <a type="button" mdbBtn floating="true" color="li" size="sm">
+                <mdb-icon fab icon="linkedin"></mdb-icon>
+                </a>
+                <a type="button" mdbBtn floating="true" color="git" size="sm">
+                <mdb-icon fab icon="github"></mdb-icon>
+                </a> -->
+        
+            </form>  
+        </mdb-card-body>
+    </mdb-card>
+    </div>
+</div>
