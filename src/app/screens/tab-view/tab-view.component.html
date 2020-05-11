@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark px-4 p-0">
     <ul class="navbar-nav w-100 justify-content-around">
     <div *ngFor="let tab of avaiableTabs">
-        <li class="nav-item p-1" [class.active]="activeTab == tab.name" [class.border-bottom]="activeTab == tab.name" *ngIf="!tab.dropDownItems else navDropdown">
+        <li class="nav-item p-1" [class.active]="activeTab == tab.name"  *ngIf="!tab.dropDownItems else navDropdown">
             <a class="nav-link" [routerLink]="tab.routeTo" (click)="changeActiveTab(tab.name);">{{tab.name}}</a>
         </li>
         <ng-template #navDropdown>

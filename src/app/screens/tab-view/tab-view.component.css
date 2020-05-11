@@ -1,0 +1,7 @@
+.border-bottom{
+    border-color: #005f87;
+}
+.active{
+    border-bottom: 3px solid #38718a !important;
+    color: #38718a !important;
+}

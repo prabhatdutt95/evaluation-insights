@@ -1,1 +1,119 @@
-<p>dashboard works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="font-weight-bolder">EI Dashboard</h2>
+        </div>
+        <div class="col-sm-6 text-right">
+            <div class="btn-group">
+                <button type="button" class="btn btn-info px-4 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Action
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">
+                      Generate comparision report
+                  </a>
+                  <a class="dropdown-item" href="#">
+                      Schedule a demo
+                  </a>
+                  <a class="dropdown-item" href="#">
+                      Engage for due deligence
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-lg-3" *ngFor="let data of nonGraphStaticData">
+            <div class="card rounded-0 bg-blue text-light">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-3">
+                            <i [class]="data.icon"></i>
+                        </div>
+                        <div class="col-9 text-center">
+                            <h6>{{data.name}}</h6>
+                            <h4 *ngIf="data.unit == 'USD'">{{data.value | currency:'USD'}}</h4>
+                            <h4 *ngIf="data.unit != 'USD'">{{data.value | number}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3 mb-3">
+        <div class="col-lg-6">
+            <div class="card rounded-0 bg-blue text-light">
+                <div class="card-header">
+                    <h4>Sales Overview</h4>
+                </div>
+                <div class="card-body p-0">
+                    <div class="chart-container">
+                        <app-line-chart></app-line-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card rounded-0 bg-blue text-light">
+                <div class="card text-light bg-blue rounded-0">
+                    <div class="card-header">
+                        <h4>Delivery feedback</h4>
+                    </div>
+                    <div class="card-body bg-white p-0">
+                        <div style="display: block">
+                            <app-stacked-chart></app-stacked-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-lg-4">
+            <div class="card mb-2 rounded-0 bg-blue text-light">
+                <div class="card text-light bg-blue rounded-0">
+                    <div class="card-header">
+                        <h4>Geo. Implementation</h4>
+                    </div>
+                    <div class="card-body bg-white p-0">
+                        <div style="display: block">
+                            <pie-chart></pie-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card rounded-0 bg-blue text-light">
+                <div class="card text-light bg-blue rounded-0">
+                    <div class="card-header">
+                        <h4>Geo. Implementation</h4>
+                    </div>
+                    <div class="card-body bg-white p-0">
+                        <div style="display: block">
+                            <app-horizontal-bar-chart></app-horizontal-bar-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn position-fixed open-button" (click)="openChatWindow()">
+        <i class="fas fa-comment text-blue fa-3x"></i>
+    </button>
+
+    <div class="chat-popup" id="myForm" [class.d-block]="chatWindow" [class.d-none]="!chatWindow">
+        <form class="form-container bg-dark p-3 text-light">
+            <h1>Ask a question</h1>
+
+            <div class="form-group">
+                <label for="msg"><b>Message</b></label>
+                <textarea placeholder="Ask.." name="msg" class="form-control" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block mb-1">Send</button>
+            <button type="button" class="btn btn-danger btn-block" (click)="closeChatWindow()">Close</button>
+        </form>
+    </div>
+</div>
