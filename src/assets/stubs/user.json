@@ -23,6 +23,27 @@
       "contactNumber": "8908908908",
       "password": "cvrce9694",
       "id": 3
+    },
+    {
+      "fname": "abcd",
+      "lname": "efgh",
+      "email": "abcd@bxas.com",
+      "password": "infy1234dasdsa",
+      "id": 4
+    },
+    {
+      "fname": "prabhat",
+      "lname": "dutt",
+      "email": "prabhat@gmail.com",
+      "password": "asdf1234",
+      "id": 5
+    },
+    {
+      "fname": "prabhat",
+      "lname": "dutt",
+      "email": "prabhat123@gmail.com",
+      "password": "infy12345",
+      "id": 6
     }
   ]
 }

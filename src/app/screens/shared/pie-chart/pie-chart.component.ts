@@ -12,7 +12,7 @@ export class PieChartComponent {
     { data: [300, 50, 100, 40, 120], label: 'My First dataset' }
   ];
 
-  public chartLabels: Array<any> = ['Red', 'Green', 'Yellow', 'Grey', 'Dark Grey'];
+  public chartLabels: Array<any> = ['US', 'UK', 'France', 'Japan', 'India'];
 
   public chartColors: Array<any> = [
     {

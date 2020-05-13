@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./horizontal-bar-chart.component.scss']
 })
 export class HorizontalBarChartComponent implements OnInit {
-  public chartType: string = 'horizontalBar';
+  public chartType: string = 'bar';
 
   public chartDatasets: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' }
+    { data: [3, 2, 2, 2, 1, 0] }
   ];
 
-  public chartLabels: Array<any> = ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'];
+  public chartLabels: Array<any> = ['RCL' , 'DNA', 'MFG', 'CIS', 'FS'];
 
   public chartColors: Array<any> = [
     {

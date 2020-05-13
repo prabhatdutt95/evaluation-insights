@@ -10,7 +10,7 @@
                     {{tab.name}}
                 </a>
                 <div class="dropdown-menu bg-blue" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" *ngFor="let item of tab.dropDownItems" [routerLink]="item.routeTo">
+                    <a class="dropdown-item text-light" *ngFor="let item of tab.dropDownItems" [routerLink]="item.routeTo">
                         {{item.name}}
                     </a>
                 </div>

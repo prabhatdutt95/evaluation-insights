@@ -10,7 +10,7 @@ export class LineChartComponent implements OnInit {
   public chartType: string = 'line';
 
   public chartDatasets: Array<any> = [
-    { data: [93500, 102345, 123452, 167843, 99230],
+    { data: [93500, 102345, 103452, 107843, 109230, 108756],
       label: 'Earnings ($)',
       lineTension: 0,
     }
